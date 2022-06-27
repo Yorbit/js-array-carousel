@@ -3,4 +3,5 @@
     height: 700px;
     object-fit: cover;
     display: block;
+    position: relative;
 }

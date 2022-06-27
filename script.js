@@ -18,6 +18,36 @@ for (let index = 0; index < images.length; index++) {
     }
 
     iContainer.append(newImg);
-
 }
 
+let imageList = iContainer.children;
+console.log(imageList);
+const afterButton = document.getElementById('after-btn');
+afterButton.addEventListener('click', function () {
+
+    imageList[imageActive].classList.add('d-none');
+
+    ++imageActive;
+
+    if (imageActive === images.length) {
+
+        imageActive = 0;
+    }
+
+    imageList[imageActive].classList.remove('d-none');
+})
+
+const beforeButton = document.getElementById('before-btn');
+beforeButton.addEventListener('click', function () {
+
+    imageList[imageActive].classList.add('d-none');
+
+    --imageActive;
+
+    if (imageActive === -1) {
+
+        imageActive = images.length - 1;
+    }
+
+    imageList[imageActive].classList.remove('d-none');
+})
